@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Welcome to the Future! </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1> Welcome to the Future!  </h1>
+        <div class="row">
+            <div>
+                <label for="container">Number of Years:</label>
+                <select name="container" id="container">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>
+                    <option value="50">50</option>
+                    <option value="60">60</option>
+                    <option value="70">70</option>
+                    <option value="80">80</option>
+                    <option value="90">90</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+            <div>
+                <label for="email"> Your Email Address:</label>
+                <textarea id="email" name="email" rows="1" cols="14" placeholder="Enter your email"></textarea>
+            </div>
+            <div>
+                <label for="letter"> Your Letter:</label>
+                <textarea id="letter" name="letter" rows="10" cols="30" placeholder="The future awaits!"></textarea>
+            </div>
+        </div>
+        <button id="send">Send Letter</button>
+        <button id="clear">Clear</button>
+        <div id = "all">
+        </div>
+    </div>
+</div>
+<script>
+    const sendButton = document.getElementById('send');
+    const clearButton = document.getElementById('clear');
+    const all = document.getElementById('all');
+    const container = document.getElementById('container');
+    const letter = document.getElementById('letter');
+    const email = document.getElementById('email');
+
+    sendButton.addEventListener('click', function(e){
+        const container1 = document.createElement('container')
+        container1.innerHTML = `Your letter will be sent in ${container.value} years to ${email.value}`
+        all.appendChild(container1);
+    })
+    clearButton.addEventListener('click', function(e){
+        all.innerHTML = " ";
+        letter.value = " ";
+        email.value = "";
+    })
+</script>
+</body>
+</html>
